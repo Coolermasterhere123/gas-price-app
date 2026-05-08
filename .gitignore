@@ -1,0 +1,8 @@
+node_modules/
+.next/
+.env
+.env.local
+.DS_Store
+*.log
+# sw.js is generated from sw.template.js at build time
+public/sw.js

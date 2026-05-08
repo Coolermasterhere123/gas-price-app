@@ -1,0 +1,508 @@
+.page {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 16px 80px;
+}
+
+/* ── Hero ── */
+.hero { padding: 60px 0 40px; text-align: center; }
+.heroInner { max-width: 720px; margin: 0 auto; }
+.heroEyebrow {
+  font-size: 13px; font-weight: 600; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--text3); margin-bottom: 16px;
+}
+.heroTitle {
+  font-size: clamp(28px, 5vw, 52px); font-weight: 800;
+  line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 16px; color: var(--text);
+}
+.heroAccent {
+  background: linear-gradient(90deg, #ff4d4d, #ff9f43);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.heroSub { font-size: 16px; color: var(--text2); line-height: 1.6; margin-bottom: 24px; }
+.heroStats { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: 16px; }
+.rateTag {
+  display: inline-block; font-size: 12px; color: var(--text3);
+  background: var(--bg2); border: 1px solid var(--border); border-radius: 20px; padding: 5px 14px;
+}
+
+/* ── Stat pills ── */
+.statPill {
+  display: flex; align-items: center; gap: 10px;
+  background: var(--bg2); border: 1px solid var(--border); border-radius: 12px; padding: 10px 16px;
+}
+.statIcon { font-size: 20px; }
+.statLabel { font-size: 11px; color: var(--text3); text-transform: uppercase; letter-spacing: 0.06em; }
+.statValue { font-size: 14px; font-weight: 600; color: var(--text); }
+
+/* ── Calculator ── */
+.calculator {
+  background: linear-gradient(135deg, rgba(255,77,77,0.08), rgba(255,159,67,0.06));
+  border: 1px solid rgba(255,77,77,0.2); border-radius: 20px; padding: 28px; margin-bottom: 32px;
+}
+.calcLabel {
+  display: flex; align-items: center; gap: 12px;
+  font-size: 16px; color: var(--text2); margin-bottom: 20px; flex-wrap: wrap;
+}
+.calcInputWrap {
+  display: flex; align-items: center; gap: 4px;
+  background: var(--bg3); border: 1px solid var(--border2); border-radius: 10px; padding: 6px 12px;
+}
+.calcDollar { color: #ff4d4d; font-weight: 700; font-size: 16px; }
+.calcInput {
+  background: none; border: none; color: var(--text);
+  font-size: 22px; font-weight: 700; width: 90px; padding: 0;
+}
+.calcGrid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 10px;
+}
+.calcCard {
+  background: var(--bg2); border: 1px solid var(--border); border-radius: 12px; padding: 14px;
+  display: flex; flex-direction: column; align-items: center; gap: 2px; text-align: center;
+}
+.calcFlag { font-size: 24px; margin-bottom: 4px; }
+.calcCountry { font-size: 12px; color: var(--text3); }
+.calcNumber { font-size: 26px; font-weight: 800; color: #ff9f43; line-height: 1.1; }
+.calcUnit { font-size: 12px; color: var(--text2); }
+
+/* ── Source warning ── */
+.sourceBanner {
+  background: rgba(245,158,11,0.1); border: 1px solid rgba(245,158,11,0.3);
+  color: #f59e0b; border-radius: 10px; padding: 10px 16px; font-size: 13px; margin-bottom: 16px;
+}
+
+/* ── Controls ── */
+.controls { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin-bottom: 16px; }
+.searchInput { flex: 1; min-width: 180px; height: 38px; }
+.regionSelect { height: 38px; }
+.sortBtns { display: flex; gap: 6px; }
+.sortBtn {
+  background: var(--bg2); border: 1px solid var(--border); color: var(--text2);
+  border-radius: 8px; padding: 6px 12px; font-size: 13px; transition: all 0.15s; cursor: pointer;
+}
+.sortBtn:hover { border-color: var(--border2); color: var(--text); }
+.sortActive { background: rgba(255,77,77,0.12); border-color: rgba(255,77,77,0.35); color: #ff7070; }
+.viewToggle { display: flex; gap: 4px; }
+.viewToggle button {
+  background: var(--bg2); border: 1px solid var(--border); color: var(--text3);
+  border-radius: 8px; padding: 6px 10px; font-size: 16px; transition: all 0.15s; cursor: pointer;
+}
+.viewToggle button:hover { color: var(--text); border-color: var(--border2); }
+.viewActive { background: rgba(255,77,77,0.12) !important; border-color: rgba(255,77,77,0.35) !important; color: #ff7070 !important; }
+
+.resultsMeta { font-size: 13px; color: var(--text3); margin-bottom: 16px; }
+
+/* ── Cards grid ── */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 14px; }
+.card {
+  background: var(--bg2); border: 1px solid var(--border); border-radius: 16px; padding: 18px;
+  position: relative; transition: border-color 0.2s, transform 0.2s; overflow: hidden;
+}
+.card:hover { border-color: var(--cat-color, var(--border2)); transform: translateY(-2px); }
+.card::before {
+  content: ""; position: absolute; inset: 0; background: var(--cat-bg, transparent);
+  opacity: 0; transition: opacity 0.2s; pointer-events: none;
+}
+.card:hover::before { opacity: 1; }
+
+.cardRank { position: absolute; top: 14px; right: 14px; font-size: 11px; color: var(--text3); font-weight: 600; }
+.cardHead { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }
+.cardFlag { font-size: 28px; flex-shrink: 0; }
+.cardCountry { font-size: 15px; font-weight: 600; color: var(--text); }
+.cardRegion { font-size: 12px; color: var(--text3); }
+.cardBadge {
+  margin-left: auto; font-size: 11px; font-weight: 600;
+  padding: 3px 8px; border-radius: 20px; white-space: nowrap;
+}
+.caBadge {
+  font-size: 10px; font-weight: 600; background: rgba(255,77,77,0.15);
+  color: #ff7070; padding: 1px 6px; border-radius: 10px; margin-left: 6px;
+}
+
+.cardMain { margin-bottom: 12px; display: flex; align-items: baseline; gap: 8px; }
+.cardMainNum {
+  font-size: 40px; font-weight: 800; color: var(--cat-color, var(--text));
+  letter-spacing: -0.02em; line-height: 1;
+}
+.cardMainLabel { font-size: 13px; color: var(--text3); }
+
+.barTrack { height: 4px; background: var(--bg3); border-radius: 2px; margin-bottom: 14px; overflow: hidden; }
+.barFill { height: 100%; border-radius: 2px; transition: width 0.5s ease; }
+
+.cardDetails { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.detail { display: flex; flex-direction: column; gap: 2px; }
+.detailLabel { font-size: 11px; color: var(--text3); }
+.detailVal { font-size: 13px; font-weight: 600; color: var(--text2); }
+
+/* ── Table ── */
+.tableWrap { overflow-x: auto; border-radius: 16px; border: 1px solid var(--border); }
+.table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.table thead { background: var(--bg2); }
+.table th {
+  padding: 12px 16px; text-align: left; font-size: 12px; text-transform: uppercase;
+  letter-spacing: 0.06em; color: var(--text3); font-weight: 600;
+  border-bottom: 1px solid var(--border); white-space: nowrap;
+}
+.table td { padding: 11px 16px; border-bottom: 1px solid var(--border); color: var(--text2); }
+.table tr:last-child td { border-bottom: none; }
+.table tbody tr { transition: background 0.1s; }
+.table tbody tr:hover { background: var(--bg3); }
+.sortable { cursor: pointer; user-select: none; }
+.sortable:hover { color: var(--text); }
+.rankCell { color: var(--text3); font-size: 12px; }
+.tableFlag { margin-right: 8px; font-size: 18px; }
+.regionCell { color: var(--text3); font-size: 13px; }
+.numCell { font-variant-numeric: tabular-nums; color: var(--text); }
+.tableBadge { font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 20px; }
+.caRow td { background: rgba(255,77,77,0.04); }
+
+/* ── Loading / Error ── */
+.fullscreen {
+  min-height: 100vh; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 20px; color: var(--text2);
+}
+.loadingSpinner {
+  width: 48px; height: 48px; border: 3px solid var(--border);
+  border-top-color: #ff4d4d; border-radius: 50%; animation: spin 0.9s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+.loadingText { font-size: 15px; color: var(--text3); }
+.errorIcon { font-size: 40px; }
+.errorText { color: var(--red); font-size: 15px; }
+
+/* ── Footer ── */
+.footer {
+  margin-top: 60px; text-align: center; font-size: 12px;
+  color: var(--text3); padding: 20px 0; border-top: 1px solid var(--border);
+}
+.footer a { color: var(--text3); text-decoration: underline; opacity: 0.7; }
+.footer a:hover { opacity: 1; }
+.pwaTag { color: #22d07a; }
+
+/* ── Mobile ── */
+@media (max-width: 600px) {
+  .hero { padding: 40px 0 28px; }
+  .calculator { padding: 18px; }
+  .controls { gap: 8px; }
+  .grid { grid-template-columns: 1fr; }
+  .sortBtns { flex-wrap: wrap; }
+}
+
+/* ── Canada Section ── */
+.canadaSection {
+  margin-bottom: 24px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.collapseHeader {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  background: var(--bg2);
+  color: var(--text);
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: background 0.15s;
+}
+.collapseHeader:hover { background: var(--bg3); }
+.collapseChevron { font-size: 12px; color: var(--text3); }
+
+.canadaBody {
+  padding: 20px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* BC High / Low */
+.bcHighLow { display: flex; flex-direction: column; gap: 12px; }
+.bcHLLabel { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text3); }
+.bcHLRow { display: flex; align-items: center; gap: 12px; }
+.bcHLCard {
+  flex: 1;
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.bcHLBadge { font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 20px; width: fit-content; }
+.bcHLCity { font-size: 16px; font-weight: 700; color: var(--text); }
+.bcHLPrice { font-size: 24px; font-weight: 800; color: var(--text); }
+.bcHLPrice span { font-size: 13px; font-weight: 400; color: var(--text3); margin-left: 2px; }
+.bcHLNote { font-size: 11px; color: var(--text3); }
+.bcHLDivider { font-size: 18px; color: var(--text3); flex-shrink: 0; }
+
+/* BC all cities bar chart */
+.bcAllCities {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 14px 16px;
+}
+.bcCityRow { display: flex; align-items: center; gap: 10px; }
+.bcCityName { font-size: 13px; color: var(--text2); width: 120px; flex-shrink: 0; }
+.bcCityBar { flex: 1; height: 6px; background: var(--bg2); border-radius: 3px; overflow: hidden; }
+.bcCityBarFill { height: 100%; border-radius: 3px; transition: width 0.4s ease; }
+.bcCityPrice { font-size: 13px; font-weight: 600; color: var(--text); width: 60px; text-align: right; flex-shrink: 0; }
+
+/* Province grid */
+.provLabel { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text3); }
+.provGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 10px;
+}
+.provCard {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.provAbbr { font-size: 11px; font-weight: 700; color: var(--text3); letter-spacing: 0.06em; }
+.provName { font-size: 13px; font-weight: 600; color: var(--text); line-height: 1.3; }
+.provPrice { font-size: 20px; font-weight: 800; margin-top: 4px; }
+.provPriceUnit { font-size: 12px; font-weight: 400; color: var(--text3); margin-left: 1px; }
+.provLiters { font-size: 11px; color: var(--text3); }
+.provBarTrack { height: 4px; background: var(--bg2); border-radius: 2px; margin-top: 6px; overflow: hidden; }
+.provBarFill { height: 100%; border-radius: 2px; }
+.provNote { font-size: 10px; color: var(--text3); margin-top: 2px; font-style: italic; }
+
+.canadaDisclaimer { font-size: 11px; color: var(--text3); }
+
+/* ── Local Section ── */
+.localSection {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 18px 20px;
+  margin-bottom: 24px;
+}
+.localHeader { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.localTitle { font-size: 15px; font-weight: 600; color: var(--text); }
+.localSub { font-size: 12px; color: var(--text3); margin-top: 2px; }
+.localToggle {
+  background: rgba(108,99,255,0.15);
+  border: 1px solid rgba(108,99,255,0.35);
+  color: #a78bfa;
+  border-radius: 8px;
+  padding: 7px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.15s;
+}
+.localToggle:hover { background: rgba(108,99,255,0.25); }
+
+.localInputRow {
+  display: flex;
+  gap: 14px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+.localInputGroup { display: flex; flex-direction: column; gap: 5px; }
+.localLabel { font-size: 11px; color: var(--text3); text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600; }
+.localCityInput { width: 180px; height: 38px; }
+.localPriceWrap { display: flex; align-items: center; gap: 4px; background: var(--bg3); border: 1px solid var(--border2); border-radius: 8px; padding: 0 10px; height: 38px; }
+.localDollar { font-size: 13px; color: var(--text3); font-weight: 600; }
+.localPriceInput { background: none; border: none; color: var(--text); font-size: 18px; font-weight: 700; width: 70px; padding: 0; }
+.localPerL { font-size: 13px; color: var(--text3); }
+
+.localResult {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(167,139,250,0.08);
+  border: 1px solid rgba(167,139,250,0.25);
+  border-radius: 10px;
+  padding: 12px 16px;
+  flex: 1;
+  min-width: 220px;
+}
+.localResultIcon { font-size: 24px; }
+.localResultMain { font-size: 18px; font-weight: 700; color: #a78bfa; }
+.localResultSub { font-size: 12px; color: var(--text3); margin-top: 2px; }
+
+/* Local card / row highlights */
+.calcCardLocal { border-color: rgba(167,139,250,0.4) !important; background: rgba(167,139,250,0.06) !important; }
+.cardLocal { border-color: rgba(167,139,250,0.4) !important; }
+.localRow td { background: rgba(167,139,250,0.06); }
+.localBadge {
+  font-size: 10px; font-weight: 600;
+  background: rgba(167,139,250,0.2); color: #a78bfa;
+  padding: 1px 6px; border-radius: 10px; margin-left: 6px;
+}
+
+@media (max-width: 600px) {
+  .bcHLRow { flex-direction: column; }
+  .bcHLDivider { transform: rotate(90deg); }
+  .bcCityName { width: 90px; }
+  .provGrid { grid-template-columns: 1fr 1fr; }
+  .localInputRow { flex-direction: column; }
+  .localCityInput { width: 100%; }
+}
+
+/* ── Canada Section ── */
+.canadaSection {
+  margin-bottom: 24px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+}
+.collapseHeader {
+  width: 100%; display: flex; align-items: center; justify-content: space-between;
+  padding: 16px 20px; background: var(--bg2); color: var(--text);
+  font-size: 15px; font-weight: 600; cursor: pointer; border: none; transition: background 0.15s;
+}
+.collapseHeader:hover { background: var(--bg3); }
+.collapseChevron { font-size: 12px; color: var(--text3); }
+
+.canadaBody { padding: 20px; border-top: 1px solid var(--border); display: flex; flex-direction: column; gap: 20px; }
+
+/* BC High / Low */
+.bcHLRow { display: flex; align-items: center; gap: 12px; }
+.bcHLCard {
+  flex: 1; background: var(--bg3); border: 1px solid var(--border);
+  border-radius: 12px; padding: 14px 16px; display: flex; flex-direction: column; gap: 4px;
+}
+.bcHLBadge { font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 20px; width: fit-content; }
+.bcHLCity  { font-size: 16px; font-weight: 700; color: var(--text); }
+.bcHLPrice { font-size: 26px; font-weight: 800; color: var(--text); }
+.bcHLPrice span { font-size: 13px; font-weight: 400; color: var(--text3); }
+.bcHLNote  { font-size: 11px; color: var(--text3); }
+.bcHLDivider { font-size: 20px; color: var(--text3); flex-shrink: 0; }
+
+/* Section label */
+.sectionLabel {
+  font-size: 12px; font-weight: 600; text-transform: uppercase;
+  letter-spacing: 0.07em; color: var(--text3);
+}
+
+/* BC Cities grid — clickable buttons */
+.bcCitiesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 8px;
+}
+.bcCityBtn {
+  background: var(--bg3); border: 1px solid var(--border); border-radius: 12px;
+  padding: 12px 14px; text-align: left; cursor: pointer; transition: border-color 0.15s, transform 0.15s;
+  display: flex; flex-direction: column; gap: 4px;
+}
+.bcCityBtn:hover { border-color: var(--border2); transform: translateY(-1px); }
+.bcCityBtnTop { display: flex; justify-content: space-between; align-items: baseline; }
+.bcCityBtnName  { font-size: 14px; font-weight: 600; color: var(--text); }
+.bcCityBtnPrice { font-size: 16px; font-weight: 800; }
+.bcCityBarTrack { height: 4px; background: var(--bg2); border-radius: 2px; overflow: hidden; margin: 2px 0; }
+.bcCityBarFill  { height: 100%; border-radius: 2px; }
+.bcCityBtnNote  { font-size: 10px; color: var(--text3); }
+.bcCityBtnCta   { font-size: 11px; color: var(--text3); margin-top: 2px; }
+
+/* Province grid */
+.provGrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 8px; }
+.provCard {
+  background: var(--bg3); border: 1px solid var(--border); border-radius: 12px;
+  padding: 12px 14px; display: flex; flex-direction: column; gap: 2px;
+}
+.provAbbr  { font-size: 11px; font-weight: 700; color: var(--text3); letter-spacing: 0.06em; }
+.provName  { font-size: 13px; font-weight: 600; color: var(--text); line-height: 1.3; }
+.provPrice { font-size: 20px; font-weight: 800; margin-top: 4px; }
+.provPriceUnit { font-size: 12px; font-weight: 400; color: var(--text3); margin-left: 1px; }
+.provLiters { font-size: 11px; color: var(--text3); }
+.provBarTrack { height: 4px; background: var(--bg2); border-radius: 2px; margin-top: 6px; overflow: hidden; }
+.provBarFill  { height: 100%; border-radius: 2px; }
+.provNote  { font-size: 10px; color: var(--text3); margin-top: 2px; font-style: italic; }
+
+.canadaDisclaimer { font-size: 11px; color: var(--text3); }
+
+/* ── Stations Modal ── */
+.modalOverlay {
+  position: fixed; inset: 0; background: rgba(0,0,0,0.7);
+  z-index: 100; display: flex; align-items: center; justify-content: center;
+  padding: 16px;
+}
+.modal {
+  background: var(--bg2); border: 1px solid var(--border2);
+  border-radius: 20px; width: 100%; max-width: 620px;
+  max-height: 88vh; overflow-y: auto; display: flex; flex-direction: column;
+}
+.modalHeader {
+  display: flex; justify-content: space-between; align-items: flex-start;
+  padding: 20px 20px 16px; border-bottom: 1px solid var(--border); gap: 12px;
+  position: sticky; top: 0; background: var(--bg2); z-index: 1;
+}
+.modalTitle { font-size: 17px; font-weight: 700; color: var(--text); }
+.modalSub   { font-size: 12px; color: var(--text3); margin-top: 3px; }
+.modalClose {
+  background: var(--bg3); border: 1px solid var(--border); color: var(--text2);
+  border-radius: 8px; padding: 6px 10px; font-size: 14px; cursor: pointer; flex-shrink: 0;
+}
+.modalClose:hover { color: var(--text); }
+
+.modalLoading {
+  display: flex; flex-direction: column; align-items: center;
+  gap: 14px; padding: 40px 20px; color: var(--text3); font-size: 14px;
+}
+.modalError { padding: 20px; color: var(--red); font-size: 14px; }
+
+/* Station list */
+.stationsList { padding: 16px 20px; display: flex; flex-direction: column; gap: 10px; }
+.stationCard {
+  background: var(--bg3); border: 1px solid var(--border);
+  border-radius: 12px; padding: 14px; display: flex; gap: 12px;
+}
+.stationRank {
+  font-size: 13px; font-weight: 800; color: var(--accent2);
+  min-width: 28px; padding-top: 2px;
+}
+.stationBody { flex: 1; display: flex; flex-direction: column; gap: 5px; }
+.stationTop  { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+.stationName  { font-size: 15px; font-weight: 700; color: var(--text); }
+.stationPrice { font-size: 18px; font-weight: 800; color: #22d07a; white-space: nowrap; }
+.stationAddress { font-size: 12px; color: var(--text3); }
+.stationHours   { font-size: 12px; color: var(--text3); }
+.stationTip {
+  font-size: 12px; color: var(--text2); background: rgba(108,99,255,0.08);
+  border: 1px solid rgba(108,99,255,0.15); border-radius: 6px; padding: 6px 8px; margin-top: 2px;
+}
+
+.modalDisclaimer {
+  padding: 12px 20px 20px; font-size: 11px; color: var(--text3);
+  border-top: 1px solid var(--border);
+}
+.modalDisclaimer a { color: var(--accent2); }
+
+/* Spinner reuse */
+.loadingSpinner {
+  width: 32px; height: 32px; border: 3px solid var(--border);
+  border-top-color: var(--accent); border-radius: 50%;
+  animation: spin 0.9s linear infinite;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .bcHLRow { flex-direction: column; }
+  .bcHLDivider { transform: rotate(90deg); }
+  .bcCitiesGrid { grid-template-columns: 1fr 1fr; }
+  .provGrid { grid-template-columns: 1fr 1fr; }
+  .modal { max-height: 95vh; border-radius: 16px 16px 0 0; align-self: flex-end; }
+}
+
+.stationMeta { font-size: 11px; color: var(--text3); }
